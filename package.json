@@ -37,7 +37,7 @@
     "coz": "^6.0.14",
     "injectmock": "^2.0.0",
     "sg-schemas": "^2.0.5",
-    "sg-templates": "^1.0.1",
+    "sg-templates": "^1.0.3",
     "sg-validator": "^1.0.0",
     "sugo-ci-module": "^2.0.1",
     "sugos-assets": "^2.0.1"
