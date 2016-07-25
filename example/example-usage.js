@@ -16,7 +16,9 @@ co(function * () {
       // Register the module
       module01: new Module({
         ping () { /* ... */ }
-      })
+      }),
+      module02: new (require('./example-custom-class'))({}),
+      module03: new (require('./example-mixed-class'))({})
     }
   })
   yield actor.connect()

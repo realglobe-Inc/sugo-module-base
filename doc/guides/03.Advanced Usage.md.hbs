@@ -1,0 +1,34 @@
+Advanced Usage
+---------
+
+### Description with `$spec`
+
+You can describe a module with `$spec` property.
+The spec object must conform to [module_spec.json][spec_schema_url], a JSON-Schema.
+
+```javascript
+{{{read 'example/example-usage-spec.js'}}}
+```
+
+
+[spec_schema_url]: https://github.com/realglobe-Inc/sg-schemas/blob/master/lib/module_spec.json
+
+
+### Define Custom Class
+
+You can define you own class by extending `Module` class
+
+```javascript
+{{{read 'example/example-custom-class.js'}}}
+```
+
+### Use Mixins
+
+Sometimes you need to share functions between classes.
+
+[Javascript Class Mix-In](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Mix-ins) would do this.
+
+
+```javascript
+{{{read 'example/example-mixied-class.js'}}}
+```

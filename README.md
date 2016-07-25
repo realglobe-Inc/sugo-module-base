@@ -121,7 +121,9 @@ co(function * () {
       // Register the module
       module01: new Module({
         ping () { /* ... */ }
-      })
+      }),
+      module02: new (require('./example-custom-class'))({}),
+      module03: new (require('./example-mixed-class'))({})
     }
   })
   yield actor.connect()
@@ -160,27 +162,108 @@ co(function * () {
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/03.Methods.md.hbs" Start -->
+<!-- Section from "doc/guides/03.Advanced Usage.md.hbs" Start -->
 
-<a name="section-doc-guides-03-methods-md"></a>
+<a name="section-doc-guides-03-advanced-usage-md"></a>
 
-Methods
+Advanced Usage
 ---------
 
-The following methods are available from remote callers for the module.
+### Description with `$spec`
+
+You can describe a module with `$spec` property.
+The spec object must conform to [module_spec.json][spec_schema_url], a JSON-Schema.
+
+```javascript
+#!/usr/bin/env node
+
+/**
+ * Example usage of the caller
+ */
+'use strict'
+
+const { Module } = require('sugo-module-base')
+const sugoActor = require('sugo-actor')
+const co = require('co')
+
+co(function * () {
+  let actor = sugoActor('http://my-sugo-cloud.example.com/actors', {
+    key: 'my-actor-01',
+    modules: {
+      // Register the module
+      module01: new Module({
+        ping () { /* ... */ },
+        get $spec () {
+          /**
+           * Module specification.
+           * @see https://github.com/realglobe-Inc/sg-schemas/blob/master/lib/module_spec.json
+           */
+          return {
+            name: 'sugo-module-base-sample',
+            version: '1.0.0',
+            desc: 'A sample module',
+            methods: {
+              ping: {
+                desc: 'Test the reachability of the module',
+                params: []
+              }
+            }
+          }
+        }
+      })
+    }
+  })
+  yield actor.connect()
+}).catch((err) => console.error(err))
+
+```
 
 
+[spec_schema_url]: https://github.com/realglobe-Inc/sg-schemas/blob/master/lib/module_spec.json
 
 
-<!-- Section from "doc/guides/03.Methods.md.hbs" End -->
+### Define Custom Class
 
-<!-- Section from "doc/guides/04.Events.md.hbs" Start -->
+You can define you own class by extending `Module` class
 
-<a name="section-doc-guides-04-events-md"></a>
+```javascript
+/**
+ * @MyCustomClass
+ */
+'use strict'
+
+const { Module } = require('sugo-module-base')
+
+class MyCustomClass extends Module {
+  constructor (config) {
+    super(config)
+  }
+
+  myMethod01 () {
+    /* ... */
+  }
+
+  get $spec () {
+    return { /* ... */ }
+  }
+}
+
+module.exports = MyCustomClass
+
+```
+
+### Use Mixins
+
+Sometimes you need to share functions between classes.
+
+[Javascript Class Mix-In](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Mix-ins) would do this.
 
 
+```javascript
 
-<!-- Section from "doc/guides/04.Events.md.hbs" End -->
+```
+
+<!-- Section from "doc/guides/03.Advanced Usage.md.hbs" End -->
 
 
 <!-- Sections Start -->

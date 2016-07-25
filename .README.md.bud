@@ -24,10 +24,6 @@ module.exports = readmeMdBud({
   overview: 'doc/overview.md',
   links: require('./doc/links'),
   vars: {
-    get spec () {
-      const module =require('./lib')
-      return module.$spec
-    },
     bannerHeight: 40
   }
 })
