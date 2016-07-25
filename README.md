@@ -164,6 +164,12 @@ co(function * () {
 
 <a name="section-doc-guides-03-methods-md"></a>
 
+Methods
+---------
+
+The following methods are available from remote callers for the module.
+
+
 
 
 <!-- Section from "doc/guides/03.Methods.md.hbs" End -->

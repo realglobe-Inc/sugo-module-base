@@ -1,14 +1,16 @@
 /**
- * Test case for index.
+ * Test case for validate.
  * Runs with mocha.
  */
 'use strict'
 
-const index = require('../lib/index.js')
+const validate = require('../lib/configure/validate.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('index', () => {
+describe('validate', function () {
+  this.timeout(3000)
+
   before(() => co(function * () {
 
   }))
@@ -17,8 +19,8 @@ describe('index', () => {
 
   }))
 
-  it('Eval props', () => co(function * () {
-    assert.ok(index.Module)
+  it('Validate', () => co(function * () {
+
   }))
 })
 

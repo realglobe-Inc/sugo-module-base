@@ -26,7 +26,9 @@
   "dependencies": {
     "co": "^4.6.0",
     "debug": "^2.2.0",
-    "sg-check": "^1.0.3"
+    "defaults": "^1.0.3",
+    "sg-check": "^1.0.3",
+    "sugo-constants": "^1.0.2"
   },
   "devDependencies": {
     "ababel": "^1.0.19",
@@ -35,6 +37,7 @@
     "coz": "^6.0.14",
     "injectmock": "^2.0.0",
     "sg-schemas": "^2.0.5",
+    "sg-templates": "^1.0.1",
     "sg-validator": "^1.0.0",
     "sugo-ci-module": "^2.0.1",
     "sugos-assets": "^2.0.1"

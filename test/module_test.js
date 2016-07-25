@@ -27,6 +27,9 @@ describe('module', function () {
     })
     assert.ok(module)
     assert.equal(module.foo(), 'foo!')
+
+    let $spec = module.$$describe()
+    assert.ok($spec)
   }))
 })
 

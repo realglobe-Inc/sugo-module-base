@@ -1,14 +1,16 @@
 /**
- * Test case for index.
+ * Test case for normalize.
  * Runs with mocha.
  */
 'use strict'
 
-const index = require('../lib/index.js')
+const normalize = require('../lib/configure/normalize.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('index', () => {
+describe('normalize', function () {
+  this.timeout(3000)
+
   before(() => co(function * () {
 
   }))
@@ -17,8 +19,8 @@ describe('index', () => {
 
   }))
 
-  it('Eval props', () => co(function * () {
-    assert.ok(index.Module)
+  it('Normalize', () => co(function * () {
+
   }))
 })
 

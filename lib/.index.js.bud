@@ -13,6 +13,9 @@ module.exports = {
   tmpl: moduleIndex,
   data: {
     name: 'Module',
+    sub: {
+      compose: './compose'
+    },
     pkg
   }
 }
