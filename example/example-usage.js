@@ -15,7 +15,7 @@ co(function * () {
     modules: {
       // Register the module
       module01: new Module({
-        ping() { /* ... */}
+        ping () { /* ... */ }
       })
     }
   })

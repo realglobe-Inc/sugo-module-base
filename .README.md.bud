@@ -26,7 +26,7 @@ module.exports = readmeMdBud({
   vars: {
     get spec () {
       const module =require('./lib')
-      return module.$$describe()
+      return module.$spec
     },
     bannerHeight: 40
   }

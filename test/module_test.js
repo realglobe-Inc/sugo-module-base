@@ -28,8 +28,30 @@ describe('module', function () {
     assert.ok(module)
     assert.equal(module.foo(), 'foo!')
 
-    let $spec = module.$$describe()
+    let { $spec } = module
     assert.ok($spec)
+  }))
+
+  it('Module with custom spec', () => co(function * () {
+    let module = new Module({
+      foo () {
+        return 'foo!'
+      },
+      $spec: {
+        name: 'foo',
+        version: '1.0.0',
+        methods: {
+          foo: {
+            name: 'foo',
+            params: [
+              { name: 'hoge' }
+            ]
+          }
+        }
+      }
+    })
+    let { $spec } = module
+    assert.ok($spec.methods.foo)
   }))
 })
 

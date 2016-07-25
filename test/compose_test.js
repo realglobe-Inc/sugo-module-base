@@ -4,6 +4,7 @@
  */
 'use strict'
 
+const Module = require('../lib/module')
 const compose = require('../lib/compose.js')
 const assert = require('assert')
 const co = require('co')
@@ -21,10 +22,11 @@ describe('compose', function () {
 
   it('Compose', () => co(function * () {
     let modules = compose({
-      foo: {},
-      bar: {},
+      foo: new Module({}),
+      bar: {}
     })
-    console.log(modules)
+    assert.ok(modules.foo)
+    assert.ok(modules.bar)
   }))
 })
 
