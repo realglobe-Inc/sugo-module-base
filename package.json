@@ -1,0 +1,49 @@
+{
+  "name": "sugo-module-base",
+  "version": "1.0.0",
+  "description": "Base module for SUGOS",
+  "main": "lib",
+  "browser": "sims/browser",
+  "scripts": {
+    "prepublish": "./ci/build.js && ./ci/browser.js",
+    "test": "./ci/test.js"
+  },
+  "repository": "realglobe-Inc/sugo-module-base",
+  "keywords": [
+    "SUGOS",
+    "module"
+  ],
+  "author": {
+    "name": "Taka Okunishi",
+    "email": "okunishitaka.com@gmail.com",
+    "url": "http://okunishitaka.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realglobe-Inc/sugo-module-base/issues"
+  },
+  "homepage": "https://github.com/realglobe-Inc/sugo-module-base#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "debug": "^2.2.0",
+    "sg-check": "^1.0.3"
+  },
+  "devDependencies": {
+    "ababel": "^1.0.19",
+    "ababel-es2015": "^1.0.2",
+    "ape-tmpl": "^5.0.14",
+    "coz": "^6.0.14",
+    "injectmock": "^2.0.0",
+    "sg-schemas": "^2.0.5",
+    "sg-validator": "^1.0.0",
+    "sugo-ci-module": "^2.0.1",
+    "sugos-assets": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=3"
+  },
+  "publishConfig": {
+    "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
+  }
+}
