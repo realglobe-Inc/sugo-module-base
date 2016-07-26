@@ -2,6 +2,7 @@
 
 /**
  * Example control from a remote caller
+ * @see https://github.com/realglobe-Inc/sugo-caller
  */
 'use strict'
 
@@ -19,5 +20,4 @@ co(function * () {
   // Send ping
   let pong = yield module01.ping()
   assert.ok(pong)
-
 }).catch((err) => console.error(err))

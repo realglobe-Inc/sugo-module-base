@@ -138,6 +138,7 @@ Then, call the module from a remote caller.
 
 /**
  * Example control from a remote caller
+ * @see https://github.com/realglobe-Inc/sugo-caller
  */
 'use strict'
 
@@ -155,7 +156,6 @@ co(function * () {
   // Send ping
   let pong = yield module01.ping()
   assert.ok(pong)
-
 }).catch((err) => console.error(err))
 
 ```
@@ -260,6 +260,31 @@ Sometimes you need to share functions between classes.
 
 
 ```javascript
+/**
+ * Example to use mixin
+ */
+'use strict'
+
+const { Module } = require('sugo-module-base')
+
+const HiPeople = (baseClass = Module) => class extends baseClass {
+  sayHi () { console.log('Hi!') }
+}
+
+const YoPeople = (baseClass = Module) => class extends baseClass {
+  sayYo () { console.log('Yo!') }
+}
+
+class MyPerson extends HiPeople(YoPeople(Module)) {
+  sayHiAndYo () {
+    const s = this
+    s.sayHi()
+    s.sayYo()
+  }
+}
+
+
+module.exports = MyPerson
 
 ```
 

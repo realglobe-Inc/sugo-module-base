@@ -21,4 +21,5 @@ class MyPerson extends HiPeople(YoPeople(Module)) {
   }
 }
 
+
 module.exports = MyPerson

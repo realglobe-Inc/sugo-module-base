@@ -3,7 +3,7 @@
   "version": "1.0.5",
   "description": "Base module for SUGOS",
   "main": "lib",
-  "browser": "sims/browser",
+  "browser": "shim/browser",
   "scripts": {
     "prepublish": "./ci/build.js && ./ci/browser.js",
     "test": "./ci/test.js"
@@ -27,7 +27,7 @@
     "co": "^4.6.0",
     "debug": "^2.2.0",
     "defaults": "^1.0.3",
-    "sg-check": "^1.0.3",
+    "sg-check": "^1.0.6",
     "sugo-constants": "^1.0.3"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "sg-schemas": "^2.0.5",
     "sg-templates": "^1.0.3",
     "sg-validator": "^1.0.0",
-    "sugo-ci-module": "^2.0.1",
+    "sugo-ci-module": "^2.0.5",
     "sugos-assets": "^2.0.1"
   },
   "engines": {

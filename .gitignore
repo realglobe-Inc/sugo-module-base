@@ -34,5 +34,5 @@ tmp
 .npmrc
 .DS_Store
 
-sims/browser
-sims/package.json
+shim/browser
+shim/package.json
