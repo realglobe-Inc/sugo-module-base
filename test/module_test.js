@@ -30,6 +30,7 @@ describe('module', function () {
 
     let { $spec } = module
     assert.ok($spec)
+    assert.ok($spec.methods.foo)
   }))
 
   it('Module with custom spec', () => co(function * () {
