@@ -51,6 +51,7 @@ describe('module', function () {
       }
     })
     let { $spec } = module
+    assert.ok(module.foo)
     assert.ok($spec.methods.foo)
   }))
 })
