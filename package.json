@@ -6,7 +6,8 @@
   "browser": "shim/browser",
   "scripts": {
     "prepublish": "./ci/build.js && ./ci/browser.js",
-    "test": "./ci/test.js"
+    "test": "./ci/test.js",
+    "test-karma": "karma start"
   },
   "repository": "realglobe-Inc/sugo-module-base",
   "keywords": [
@@ -36,6 +37,7 @@
     "ape-tmpl": "^5.0.14",
     "coz": "^6.0.14",
     "injectmock": "^2.0.0",
+    "sg-karma": "^1.0.1",
     "sg-schemas": "^2.0.5",
     "sg-templates": "^1.0.3",
     "sg-travis": "^1.1.25",
