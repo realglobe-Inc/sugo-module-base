@@ -288,6 +288,70 @@ module.exports = MyPerson
 
 ```
 
+### Modularize Existing Class
+
+Want to use an existing class? You can use `modularize()` method to define a new module class from existing class.
+Since SUGO-Actor not supports callback base function, you may need some hack.
+
+
+```javascript
+/**
+ * Example to modularize an existing class
+ */
+'use strict'
+
+const { modularize } = require('sugo-module-base')
+const sugoActor = require('sugo-actor')
+const co = require('co')
+
+co(function * () {
+  // Existing class to modularize
+  class YoPerson {
+    sayYo () {
+      return ['yo', ...arguments].join(' ')
+    }
+
+    sayYoCallback (callback) {
+      callback(null, this.sayYo())
+    }
+  }
+
+  // Since you cannot load callback base module into SUGO-Actor,
+  // You need wrapper class to add async method
+  class YoPersonAsyncWrap extends YoPerson {
+    sayYoAsync () {
+      const s = this
+      return new Promise((resolve, reject) => {
+        this.sayYoCallback((err) =>
+          err ? reject(err) : resolve()
+        )
+      })
+    }
+  }
+
+  let YoModuleClass = modularize(YoPerson, {
+    filter (name, method) {
+      let methodsToReject = [ 'sayYoCallback' ] // Strip off the callback method
+      return !~methodsToReject.indexOf(name)
+    }
+  })
+
+  // Apply the modularized class instance into actor
+  let actor = sugoActor('http://my-sugo-cloud.example.com/actors', {
+    key: 'my-actor-01',
+    modules: {
+      yo: new YoModuleClass()
+    }
+  })
+  yield actor.connect()
+})
+
+
+
+
+
+```
+
 <!-- Section from "doc/guides/03.Advanced Usage.md.hbs" End -->
 
 
