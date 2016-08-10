@@ -11,7 +11,7 @@ co(function * () {
   // Existing class to modularize
   class YoPerson {
     sayYo () {
-      return this.sayYo('yo', ...arguments)
+      return ['yo', ...arguments].join(' ')
     }
 
     sayYoCallback (callback) {
@@ -48,6 +48,7 @@ co(function * () {
   })
   yield actor.connect()
 })
+
 
 
 
