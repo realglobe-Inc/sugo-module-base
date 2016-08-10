@@ -11,7 +11,7 @@ co(function * () {
   // Existing class to modularize
   class YoPerson {
     sayYo () {
-      return ['yo', ...arguments].join(' ')
+      return [ 'yo', ...arguments ].join(' ')
     }
 
     sayYoCallback (callback) {
@@ -32,7 +32,7 @@ co(function * () {
     }
   }
 
-  let YoModuleClass = modularize(YoPerson, {
+  let YoModuleClass = modularize(YoPersonAsyncWrap, {
     filter (name, method) {
       let methodsToReject = [ 'sayYoCallback' ] // Strip off the callback method
       return !~methodsToReject.indexOf(name)
@@ -48,6 +48,7 @@ co(function * () {
   })
   yield actor.connect()
 })
+
 
 
 
