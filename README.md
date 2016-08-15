@@ -50,9 +50,31 @@ Base module for SUGOS
 <!-- Sections Start -->
 <a name="sections"></a>
 
-<!-- Section from "doc/guides/00.Requirements.md.hbs" Start -->
+<!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
 
-<a name="section-doc-guides-00-requirements-md"></a>
+<a name="section-doc-guides-00-t-o-c-md"></a>
+
+Table of Contents
+----------------
+
+- [sugo-module-base](#sugo-module-base)
+  * [Requirements](#requirements)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Advanced Usage](#advanced-usage)
+    + [Description with `$spec`](#description-with-spec)
+    + [Define Custom Class](#define-custom-class)
+    + [Use Mixins](#use-mixins)
+    + [Modularize Existing Class](#modularize-existing-class)
+  * [License](#license)
+  * [Links](#links)
+
+
+<!-- Section from "doc/guides/00.TOC.md.hbs" End -->
+
+<!-- Section from "doc/guides/10.Requirements.md.hbs" Start -->
+
+<a name="section-doc-guides-10-requirements-md"></a>
 
 Requirements
 -----
@@ -77,11 +99,11 @@ Requirements
 [npm_url]: https://docs.npmjs.com/
 
 
-<!-- Section from "doc/guides/00.Requirements.md.hbs" End -->
+<!-- Section from "doc/guides/10.Requirements.md.hbs" End -->
 
-<!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
+<!-- Section from "doc/guides/21.Installation.md.hbs" Start -->
 
-<a name="section-doc-guides-01-installation-md"></a>
+<a name="section-doc-guides-21-installation-md"></a>
 
 Installation
 -----
@@ -91,11 +113,11 @@ $ npm install sugo-module-base --save
 ```
 
 
-<!-- Section from "doc/guides/01.Installation.md.hbs" End -->
+<!-- Section from "doc/guides/21.Installation.md.hbs" End -->
 
-<!-- Section from "doc/guides/02.Usage.md.hbs" Start -->
+<!-- Section from "doc/guides/22.Usage.md.hbs" Start -->
 
-<a name="section-doc-guides-02-usage-md"></a>
+<a name="section-doc-guides-22-usage-md"></a>
 
 Usage
 ---------
@@ -160,11 +182,11 @@ co(function * () {
 
 ```
 
-<!-- Section from "doc/guides/02.Usage.md.hbs" End -->
+<!-- Section from "doc/guides/22.Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/03.Advanced Usage.md.hbs" Start -->
+<!-- Section from "doc/guides/23.Advanced Usage.md.hbs" Start -->
 
-<a name="section-doc-guides-03-advanced-usage-md"></a>
+<a name="section-doc-guides-23-advanced-usage-md"></a>
 
 Advanced Usage
 ---------
@@ -353,7 +375,7 @@ co(function * () {
 
 ```
 
-<!-- Section from "doc/guides/03.Advanced Usage.md.hbs" End -->
+<!-- Section from "doc/guides/23.Advanced Usage.md.hbs" End -->
 
 
 <!-- Sections Start -->
@@ -364,7 +386,7 @@ co(function * () {
 
 License
 -------
-This software is released under the [MIT License](https://github.com/realglobe-Inc/sugo-module-base/blob/master/LICENSE).
+This software is released under the [Apache-2.0 License](https://github.com/realglobe-Inc/sugo-module-base/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 

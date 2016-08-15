@@ -19,7 +19,7 @@
     "email": "okunishitaka.com@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/realglobe-Inc/sugo-module-base/issues"
   },
@@ -38,6 +38,7 @@
     "ape-tmpl": "^5.0.14",
     "coz": "^6.0.17",
     "injectmock": "^2.0.0",
+    "markdown-toc": "^0.12.16",
     "sg-karma": "^1.0.1",
     "sg-schemas": "^2.0.9",
     "sg-templates": "^1.0.3",
