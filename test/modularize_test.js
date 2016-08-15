@@ -46,6 +46,7 @@ describe('modularize', function () {
       })
 
       let yo = new YoModule()
+      assert.ok(yo.$$modularized)
       assert.ok(yo.$spec.methods.say)
       assert.ok(yo.$spec.methods.sayYo)
       assert.ok(!yo.$spec.methods.sayYoCallback, 'Should be rejected')
