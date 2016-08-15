@@ -6,6 +6,7 @@
 
 const Module = require('../lib/module')
 const compose = require('../lib/compose.js')
+const modularize = require('../lib/modularize.js')
 const assert = require('assert')
 const co = require('co')
 
@@ -21,12 +22,20 @@ describe('compose', function () {
   }))
 
   it('Compose', () => co(function * () {
+    let BazModule = (modularize(class Baz {
+      sayBaz () {
+        return 'baz!!!!!'
+      }
+    }))
     let modules = compose({
       foo: new Module({}),
-      bar: {}
+      bar: {},
+      baz: new BazModule
     })
-    assert.ok(modules.foo)
-    assert.ok(modules.bar)
+    let { foo, bar, baz } = modules
+    assert.ok(foo)
+    assert.ok(bar)
+    assert.ok(baz.$spec.methods.sayBaz)
   }))
 })
 
