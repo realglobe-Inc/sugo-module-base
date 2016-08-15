@@ -10,4 +10,11 @@ process.chdir(`${__dirname}/..`)
 
 const { build } = require('sugo-ci-module')
 
-build({})
+build({
+  render: [
+    '.*.bud',
+    'lib/.*.bud',
+    'doc/**/.*.bud',
+    'test/.*.bud'
+  ]
+})
