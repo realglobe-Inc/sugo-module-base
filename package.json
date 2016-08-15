@@ -29,22 +29,22 @@
     "debug": "^2.2.0",
     "defaults": "^1.0.3",
     "sg-check": "^1.0.6",
-    "sugo-constants": "^1.0.3"
+    "sugo-constants": "^2.0.0"
   },
   "devDependencies": {
-    "ababel": "^1.0.19",
-    "ababel-es2015": "^1.0.2",
+    "ababel": "^1.1.2",
+    "ababel-es2015": "^1.0.6",
     "ape-tasking": "^4.0.8",
     "ape-tmpl": "^5.0.14",
-    "coz": "^6.0.14",
+    "coz": "^6.0.17",
     "injectmock": "^2.0.0",
     "sg-karma": "^1.0.1",
-    "sg-schemas": "^2.0.5",
+    "sg-schemas": "^2.0.9",
     "sg-templates": "^1.0.3",
-    "sg-travis": "^1.1.25",
-    "sg-validator": "^1.0.0",
-    "sugo-ci-module": "^2.0.5",
-    "sugos-assets": "^2.0.1"
+    "sg-travis": "^1.1.29",
+    "sg-validator": "^1.0.4",
+    "sugo-ci-module": "^2.0.7",
+    "sugos-assets": "^2.0.3"
   },
   "engines": {
     "node": ">=6",
