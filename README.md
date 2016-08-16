@@ -57,17 +57,16 @@ Base module for SUGOS
 Table of Contents
 ----------------
 
-- [sugo-module-base](#sugo-module-base)
-  * [Requirements](#requirements)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Advanced Usage](#advanced-usage)
-    + [Description with `$spec`](#description-with-spec)
-    + [Define Custom Class](#define-custom-class)
-    + [Use Mixins](#use-mixins)
-    + [Modularize Existing Class](#modularize-existing-class)
-  * [License](#license)
-  * [Links](#links)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Advanced Usage](#advanced-usage)
+  * [Description with `$spec`](#description-with-spec)
+  * [Define Custom Class](#define-custom-class)
+  * [Use Mixins](#use-mixins)
+  * [Modularize Existing Class](#modularize-existing-class)
+- [License](#license)
+- [Links](#links)
 
 
 <!-- Section from "doc/guides/00.TOC.md.hbs" End -->
