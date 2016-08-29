@@ -1,6 +1,6 @@
 {
   "name": "sugo-module-base",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Base module for SUGOS",
   "main": "lib",
   "browser": "shim/browser",
