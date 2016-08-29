@@ -15,7 +15,8 @@ module.exports = {
     name: 'Module',
     sub: {
       compose: './compose',
-      modularize: './modularize'
+      modularize: './modularize',
+      isModule: './is_module'
     },
     pkg
   }
