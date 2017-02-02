@@ -5,8 +5,8 @@
   "main": "lib",
   "browser": "shim/browser",
   "scripts": {
-    "prepublish": "./ci/build.js && ./ci/browser.js",
-    "test": "./ci/test.js",
+    "prepare": "node ./ci/build.js && node ./ci/shim.js",
+    "test": "node ./ci/test.js",
     "test-karma": "karma start"
   },
   "repository": "realglobe-Inc/sugo-module-base",
@@ -42,16 +42,13 @@
     "sg-karma": "^1.0.1",
     "sg-schemas": "^2.0.9",
     "sg-templates": "^1.0.3",
-    "sg-travis": "^1.1.29",
     "sg-validator": "^1.0.4",
     "sugo-ci-module": "^2.0.7",
-    "sugos-assets": "^2.0.3"
+    "sugos-assets": "^2.0.3",
+    "sugos-travis": "^2.0.7"
   },
   "engines": {
     "node": ">=6",
-    "npm": ">=3"
-  },
-  "publishConfig": {
-    "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
+    "npm": ">=4"
   }
 }
