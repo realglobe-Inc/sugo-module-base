@@ -4,21 +4,20 @@ node_js:
 addons:
   firefox: "43.0"
 before_install:
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > $HOME/.npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
-- cat $HOME/.npmrc
+- npm i npm-cli-login -g
+- echo "NPM_USER=${NPM_USER}"
+- npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 install:
 - npm install
 script:
 - ./ci/build.js
+- ./ci/shim.js
 - ./ci/test.js
 - npm run test-karma
-- ./ci/cover.js
-- ./ci/report.js
 after_success:
 - ./ci/travis/publish.js
 - ./ci/travis/push_sugos_index.js
 env:
-  secure: "Y7nslUWXTHVyM/Arw6Yce75QjjiM9GXURK7Q8lWCZc8hWqugfotkhe1lAwKyUaNi08Yv53Z3xPYmukPMh61688t4Bg6sgHds6t/ojDkl7zm51XJz1sySH4Yion0caV6ig/f6Ofn4z9qh8FRig+q27jS+DE1+VBPivXmf6S+iEqOMcae9ND87VmtLhJdlspaEWnEvD7nVBdBxFHdvFPdprU/cF8TblKrSaDGrPPNwnD8uE5Qsn8xqwmv5bieg6yk1Bi7sS8+xu/C1E40A8Uj6ATJudE5KVB9eG0VvzvFb/hngfmt7DjL92Eb/KCC8qPCLZ2wFc3YR07MyzE1T/scLXlwjC1GLT0ncOy8Iq8FV+qgPKPz0jDBy6xq/3VgLi2DxGchoDGeS3NaBI0UyWkX+GDXTEaDhyqt+YpO5Ej5eAnyZLLALVKi+BP5TcK9qq36pGERLkOdoO87ke71JvoN+zUuyED23q1cbfWSYbBPvovFYgPY2E8BRvH/qYgI1gl7JqlhA9WwAL5Vo7JJ369L0yKiLUo8KmlaqlFmI37ycFKN177U6ut7c24bw7bUbGCKNJORPZnQSvWnkiOQF6YNM99IYd+4dzvJKyNNWRcED05ZbKD39wmee6IQmWbGCilE/29IW9Eg/Xd2AMioaz2IxJOqaCCMrDY9vVNGkuuoQ5J0="
+  secure: "o5EMuYsSFEigQiEjZx4b/k7ZmXYXqrcku4v/mPah+24X/0G/vhnN5SmP74wOAvtIW8eMXlXAaFBGVtOx+tWHJVRnTpfFIfZpEpF8QuPJcpRqYw1MhzKGZMNoW6mM2/i93G9e19G4+b+DUh/d7XC6gZOWtHxXDYkDTr3bx99DwfX/iPYrn7gc4QLVx/IjIE5qBXy8V8+AlDpJ4cbMNIZ9Nilvrjft1vt/3FZaB392X3C3IPr/5VGbUM1WAGT+FGeDkNsYKlzDxBAGkKr4SgkP1XmNNmRAkxzE1dImQ6HavyamTB/dQD4FVii0V1nyoxD2v7jbIjYTYmrVXIZN0D9ziViZxT76hfh/dgIGv0cqW9PNfG9Yel4g6bbWnYQPyla0ZP530TTQB33+RR34a9L1OiD+Z8GEHeGCWz6ixkDboF3/MB8P9u5jLpoHCA15X1+78vGPRtYzJmzvJpJ8Vfy6IrwyDOrWc/sdUXT8QDpDU0MLvjTS5Xek8NrD3eR4gkzS0FMdksWcEZZD50snwsEuGZtBYh1QKHYn8zLM3Oo+GRVhARAgIYALAYcef6ihctLlNPOhL9uJmz7a8kkKaY/oQO9Y9oGJwdpm+B0Y0MqbCRx149ETUxtdcdZBBelTqD+ROn2bX+joecAosi/L83vIFjH6NKfuBCQtF0esjURr5BA="
